@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Login</h1>
+{% if request.cookies.get('last_login') %}<p>Last login from this computer was {{ request.cookies.get('last_login') }}</p>{% endif %}
+<form method="post" class="form-box" onsubmit="return checkPassword(this)">
+  <label class="form-label">Email<input class="form-control" type="email" name="email" required></label>
+  <label class="form-label">Password<input class="form-control" type="password" name="password" required></label>
+  <button class="btn btn-primary">Login</button> <a href="/register">Create an account</a>
+</form>
+<script>function checkPassword(form) { if (!form.password.value) { alert('Enter a password'); return false; } return true; }</script>
+{% endblock %}

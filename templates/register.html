@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Register</h1>
+<form method="post" class="form-box" onsubmit="return checkForm(this)">
+  <label class="form-label">First name<input class="form-control" name="first_name" maxlength="50" required></label>
+  <label class="form-label">Last name<input class="form-control" name="last_name" maxlength="50" required></label>
+  <label class="form-label">Email<input class="form-control" type="email" name="email" maxlength="100" required></label>
+  <label class="form-label">Password<input class="form-control" type="password" name="password" minlength="8" required></label>
+  <button class="btn btn-success">Register</button>
+</form>
+<script>function checkForm(form) { if (form.password.value.length < 8) { alert('Use at least 8 characters'); return false; } return true; }</script>
+{% endblock %}

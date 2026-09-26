@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Add Photo</h1>
+<form method="post" enctype="multipart/form-data" class="form-box" onsubmit="return checkImage(this)">
+  <label class="form-label">Title<input class="form-control" name="title" maxlength="200" required></label>
+  <label class="form-label">Description<textarea class="form-control" name="description"></textarea></label>
+  <label class="form-label">Image<input class="form-control" type="file" name="image" accept="image/jpeg,image/png,image/gif,image/webp" required></label>
+  <button class="btn btn-success">Upload</button>
+</form>
+<script>function checkImage(form) { if (!form.image.files.length) { alert('Choose an image'); return false; } return true; }</script>
+{% endblock %}
